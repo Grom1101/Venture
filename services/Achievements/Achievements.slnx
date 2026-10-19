@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Achievements.Api/Achievements.Api.csproj" />
+    <Project Path="Achievements.Application/Achievements.Application.csproj" />
+    <Project Path="Achievements.Domain/Achievements.Domain.csproj" />
+    <Project Path="Achievements.Infrastructure/Achievements.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="Achievements.Application.Tests/Achievements.Application.Tests.csproj" />
+    <Project Path="Achievements.Domain.Tests/Achievements.Domain.Tests.csproj" />
+    <Project Path="Achievements.IntegrationTests/Achievements.IntegrationTests.csproj" />
+  </Folder>
+</Solution>

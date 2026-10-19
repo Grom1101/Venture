@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "Venture.Contracts.Users";
+
+package venture.users;
+
+// Карточки и проверка существования. Контракт принадлежит Users.
+service UserLookup {
+  rpc Exists (UserIdRequest) returns (ExistsReply);
+  rpc GetCards (GetCardsRequest) returns (GetCardsReply);
+}
+
+message UserIdRequest {
+  string id = 1;
+}
+
+message ExistsReply {
+  bool exists = 1;
+}
+
+message GetCardsRequest {
+  repeated string ids = 1;
+}
+
+message GetCardsReply {
+  repeated UserCard cards = 1;
+}
+
+message UserCard {
+  string id = 1;
+  string username = 2;
+  string display_name = 3;
+}

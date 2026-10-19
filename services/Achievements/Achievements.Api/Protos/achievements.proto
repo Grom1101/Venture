@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "Venture.Contracts.Achievements";
+
+package venture.achievements;
+
+import "google/protobuf/timestamp.proto";
+
+// Значки для чужого экрана профиля. Правила выдачи в этот контракт не входят.
+service AchievementLookup {
+  rpc GetUserAchievements (UserIdRequest) returns (AchievementsReply);
+}
+
+message UserIdRequest {
+  string id = 1;
+}
+
+message AchievementsReply {
+  repeated UserAchievement achievements = 1;
+}
+
+message UserAchievement {
+  string id = 1;
+  string type = 2;
+  string name = 3;
+  string description = 4;
+  google.protobuf.Timestamp earned_on_utc = 5;
+}

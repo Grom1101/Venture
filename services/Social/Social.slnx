@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Social.Api/Social.Api.csproj" />
+    <Project Path="Social.Application/Social.Application.csproj" />
+    <Project Path="Social.Domain/Social.Domain.csproj" />
+    <Project Path="Social.Infrastructure/Social.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="Social.Application.Tests/Social.Application.Tests.csproj" />
+    <Project Path="Social.Domain.Tests/Social.Domain.Tests.csproj" />
+    <Project Path="Social.IntegrationTests/Social.IntegrationTests.csproj" />
+  </Folder>
+</Solution>

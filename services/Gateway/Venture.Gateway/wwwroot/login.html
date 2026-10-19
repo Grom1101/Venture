@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вход — Venture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            venture: { bg: "#0a0c10", card: "#11141d", accent: "#3b82f6", muted: "#94a3b8" },
+          },
+          fontFamily: {
+            sans: ['"Comfortaa"', "system-ui", "sans-serif"],
+            heading: ['"Comfortaa"', "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("venture.theme") === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.classList.add("theme-light");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body class="font-sans">
+  <div class="auth-page">
+    <div class="card auth-card">
+      <div class="text-2xl tracking-tight mb-1">Venture</div>
+      <p class="text-venture-muted text-sm mb-6">Войдите, чтобы продолжить</p>
+      <form id="login-form" class="flex flex-col gap-4">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.com" />
+        </div>
+        <div class="field">
+          <label for="password">Пароль</label>
+          <input id="password" type="password" required minlength="8" maxlength="128" autocomplete="current-password" />
+        </div>
+        <button id="submit-btn" class="btn btn-primary w-full mt-2" type="submit">Войти</button>
+      </form>
+      <p class="text-sm text-venture-muted mt-5 text-center">
+        Нет аккаунта?
+        <a class="text-blue-400 hover:text-blue-300" href="/register.html">Зарегистрироваться</a>
+      </p>
+    </div>
+  </div>
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>

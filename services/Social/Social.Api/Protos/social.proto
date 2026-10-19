@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "Venture.Contracts.Social";
+
+package venture.social;
+
+// Подписки, которые другим сервисам нужны сразу, а не событием.
+service SocialLookup {
+  rpc GetFollowing (UserIdRequest) returns (FollowingReply);
+  rpc GetFollowStats (UserIdRequest) returns (FollowStatsReply);
+}
+
+message UserIdRequest {
+  string id = 1;
+}
+
+message FollowingReply {
+  repeated string ids = 1;
+}
+
+message FollowStatsReply {
+  int32 followers = 1;
+  int32 following = 2;
+}
